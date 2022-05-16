@@ -1,0 +1,21 @@
+---
+layout: layouts/default.njk
+pagination:
+  data: blog.posts
+  size: 1
+  alias: post
+permalink: "posts/{{ pagination.items[0].id }}/"
+---
+<h1>{{ post.title | nl2br | safe }}</h1>
+<p>
+  {{ post.body | nl2br | safe }}
+</p>
+<ul>
+  <li><a href="/">Top</a></li>
+  {% if pagination.previousPageHref %}
+    <li><a href="{{pagination.previousPageHref}}">Previous post</a></li>
+  {% endif %}
+  {% if pagination.nextPageHref %}
+    <li><a href="{{pagination.nextPageHref}}">Next post</a></li>
+  {% endif %}
+</ul>
