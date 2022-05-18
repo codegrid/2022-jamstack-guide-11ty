@@ -6,7 +6,7 @@ pagination:
   alias: post
 permalink: "posts/{{ pagination.items[0].id }}/"
 ---
-<h1>{{ post.title | nl2br | safe }}</h1>
+<h1>{{ post.title }}</h1>
 <p>
   {{ post.body | nl2br | safe }}
 </p>
